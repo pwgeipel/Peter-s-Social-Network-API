@@ -1,4 +1,3 @@
-// const { createPoolCluster } = require('mysql2');
 const { User, Thought } = require('../models')
 
 module.exports = {
@@ -8,23 +7,22 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
 
+    getSingleUser(req, res) {
+        User.findOne({ _id: req.params.userId })
+        .select('-__v')
+        .lean()
+        .then((user) => 
+            !user
+                ? res.status(404).json({ message: 'No user found with that ID'})
+                : res.json(user))
+        .catch((err) => res.status(500).json(err));
+    },
+
     createUser(req, res) {
         User.create(req.body)
             .then((user) => 
             res.json(user))
             .catch((err) => res.status(500).json(err));
     }
-    // create: async function(req, res) {
-    //     try {
-    //         const result = await User.create(req.body)
-    //         res.json(result)
-    //     } catch(err) {
-    //         res.status(500).json(err)
-    //     }
-    // },
-    // find: async function (req, res) {
-    //     try {
-    //         const users = await 
-    //     }
-    // }
-}
+ 
+};
