@@ -1,4 +1,4 @@
-const { createPoolCluster } = require('mysql2');
+// const { createPoolCluster } = require('mysql2');
 const { User, Thought } = require('../models')
 
 module.exports = {
@@ -9,7 +9,10 @@ module.exports = {
     },
 
     createUser(req, res) {
-
+        User.create(req.body)
+            .then((user) => 
+            res.json(user))
+            .catch((err) => res.status(500).json(err));
     }
     // create: async function(req, res) {
     //     try {
