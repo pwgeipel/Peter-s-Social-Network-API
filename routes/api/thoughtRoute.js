@@ -7,11 +7,11 @@ const {
     deleteThought,
     createReaction,
     deleteReaction,
-} = require('../../controllers/userController.js')
+} = require('../../controllers/thoughtController.js')
 
 router.route('/')
-    // .get(getThoughts)
-    // .post(createThought)
+    .get(getThoughts)
+    .post(createThought)
 
 // router.route('/:thoughtId')
 //     .get(getSingleThought)
