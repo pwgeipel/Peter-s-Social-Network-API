@@ -52,9 +52,9 @@ module.exports = {
             .then((user) => 
             !user
                 ? res.status(404).json({ message: 'No user found with that ID'})
-                : res.json(user))
-                console.log('route hit')
-            .catch((err) => res.status(500).json(err));    
+                : res.json(user)) 
+            .catch((err) => res.status(500).json(err))
+               
     },
 
     deleteFriend(req, res) {
