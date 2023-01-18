@@ -24,17 +24,7 @@ module.exports = {
                 ? res.status(404).json({ message: 'No thought found with that ID'})
                 : res.json(thought))
         .catch((err) => res.status(500).json(err));
-    //     .then((thought) => {
-    //         if (!thought) {
-    //             res.status(404).json({message: "Thought not found with this ID"});
-    //             return;
-    //         }
-    //         res.json(thought)
-    //     })
-    //     .catch((err) => { 
-    //     console.log(err);
-    //     res.status(400).json(err)
-    // });
+
     }, 
 
     createThought(req, res) {
@@ -52,10 +42,7 @@ module.exports = {
                     : res.json(user)
                     )
                     .catch((err) => res.status(500).json(err));
-    //         .then((thought) => 
-    //         res.json(thought))
-    //         .catch((err) => res.status(500).json(err));
-    // },
+   
 },
     updateThought(req, res) {
         Thought.findOneAndUpdate(
