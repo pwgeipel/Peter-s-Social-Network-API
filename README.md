@@ -6,6 +6,8 @@ The following is an API for a social network web application where users can sha
 
 Additionally, a video demonstrating the functionality of this API on `Postman` may be found here:
 
+[link to video](https://drive.google.com/file/d/11IBsehDFMb1PN_E9E51N5qzQ1yQ4k1TJ/view)
+
 
 ## Table of Contents
 

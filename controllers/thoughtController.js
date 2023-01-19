@@ -14,10 +14,10 @@ module.exports = {
                 res.status(500).json(err))
     },
     
-    getSingleThought({req}, res) {
+    getSingleThought(req, res) {
         Thought.findOne({ _id: req.params.thoughtId })
         .select('-__v')
-        // .lean()
+        .lean()
         console.log('route hit')
         .then((thought) => 
             !thought
